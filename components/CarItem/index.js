@@ -3,25 +3,26 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import styles from './styles'
 import Button from '../styledButtons'
 
-const index = () => {
+const CarItem = (props) => {
+    console.log("Car List Item is ", props.car)
+    const { name, tagline, taglineCTA, image } = props.car
     return (
       <View style={styles.carContainer}>
-        <ImageBackground
-          source={require("../../assets/images/ModelX.jpeg")}
-          style={styles.image}
-        />
+        <ImageBackground source={image} style={styles.image} />
 
         <View style={styles.heading}>
-          <Text style={styles.mainHeading}>Tesla X</Text>
-          <Text style={styles.subHeading}>Starting at $69,420</Text>
+          <Text style={styles.mainHeading}>{name}</Text>
+          <Text style={styles.subHeading1}>{tagline}</Text>{" "}
+          <Text style={styles.subHeading2}>{taglineCTA}</Text>
         </View>
 
-        <Button buttonType={"primary"} content={"Custom Order"} />
-
-        <Button buttonType={"secondary"} content={"Existing Inventory"} />
+        <View style={styles.buttons}>
+          <Button buttonType={"primary"} content={"Custom Order"} />
+          <Button buttonType={"secondary"} content={"Existing Inventory"} />
+        </View>
       </View>
     );
 }
 
-export default index
+export default CarItem;
 
