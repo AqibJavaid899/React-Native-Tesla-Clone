@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height,
   },
   heading: {
-    marginTop: "30%",
+    marginTop: "10%",
     alignItems: "center",
     width: "100%",
   },
